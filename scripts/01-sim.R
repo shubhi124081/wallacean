@@ -1,6 +1,7 @@
 # Load required library
 library(terra)
 library(ggplot2)
+# also rnaturalearth for world geometry 
 
 world <- rnaturalearth::ne_countries(scale = "medium", returnclass = "sf")
 a <- world[world$name %in% c("Romania", "Serbia", "Bulgaria"), ]
@@ -19,8 +20,8 @@ ggplot(data = c) +
         panel.border = element_blank()
     )
 
-wd <- "~/wallacean"
-env_dir <- "~/env"
+wd <- "~/wallacean" # replace with your working directory
+env_dir <- "~/env" # replace with your env directory
 env_files <- c(
     "CHELSA_bio_4.tif", # mean annual temp
     "CHELSA_bio_13.tif", # precip of wettest 1/4
